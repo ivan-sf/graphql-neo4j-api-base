@@ -8,16 +8,7 @@ const typeDefs = `
 
 
 const resolvers = {
-	Query: {
-	  companiesx: async (parent, args, context, info) => {
-		const session = context.driver.session();
-		const result = await session.run(
-		  "MATCH (c:Company) RETURN c"
-		);
-		session.close();
-		return result.records.map((record) => record.get("c").properties);
-	  },
-	},
+	
   };
   
 
